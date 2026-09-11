@@ -1,0 +1,27 @@
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8887
+    ports:
+      - "8887:8887"
+    volumes:
+      - .:/code
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data_v15:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data_v15:
