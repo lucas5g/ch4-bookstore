@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     #third-party apps
     'crispy_forms',
     'crispy_bootstrap5',
     'allauth',
+    'allauth.account',
     'allauth.socialaccount',
     #Local apps
     "accounts.apps.AccountsConfig",
@@ -63,7 +65,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -92,11 +96,11 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
+        "NAME": "bookstore",
         "USER": "postgres",
         "PASSWORD": "postgres",
         "HOST": "localhost",
-        "PORT": 5432,
+        "PORT": 5433,
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
     }
@@ -152,8 +156,9 @@ MAILERS = {
 }
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT = 'home'
-
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
