@@ -8,15 +8,15 @@
   {% if user.is_authenticated %}
     <p>Hi {{ user.email }}!</p>
     <p>
-      <form action="{% url 'logout' %}" method="post">
+      <form action="{% url 'account_logout' %}" method="post">
         {% csrf_token %}
         <button>Log Out</button>
       </form>
     </p>
-    {% comment %} <p><a href="{% url 'logout' %}">Log Out</a></p> {% endcomment %}
+    {% comment %} <p><a href="{% url 'account_logout' %}">Log Out</a></p> {% endcomment %}
   {% else %}
     <p>You are not logged in.</p>
-    <a href="{% url 'login' %}">Log in</a>
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'account_login' %}">Log in</a>
+    <a href="{% url 'account_signup' %}">Sign Up</a>
   {% endif %}
 {% endblock %}
