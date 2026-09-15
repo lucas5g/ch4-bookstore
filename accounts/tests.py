@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from .forms import CustomUserCreationForm
 from .views import SignupPageView
 # Create your tests here.
+#
 class CustomUserModelTest(TestCase):
 
     def test_create_user(self):
