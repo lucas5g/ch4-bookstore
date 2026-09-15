@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c1aec0c50db5224f0926a024b7820a01ff924bb01b93e3a41df25220a881825e"
+            "sha256": "f2dffe4748931b7fe014cc8a606e379d4e523fe4f794f5efdcf75a23f02ddb00"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -59,6 +59,32 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==2.7"
+        },
+        "django-environ": {
+            "hashes": [
+                "sha256:8dbe8a57f0a540ab8abd6f54f230de5e99e3a2c9d797cb9caecb037bca3d47d8",
+                "sha256:b6c48d93b9d2ff8a3ea14099e90c35aa4f101c1b4d5f262dfee0d27b06742ed7"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9' and python_version < '4'",
+            "version": "==0.14.0"
+        },
+        "environs": {
+            "hashes": [
+                "sha256:1bfc0d32b43692f28a6e294ad2b69903d43a214672ebcf3124a66d66b52b2418",
+                "sha256:3e460fda6b3c29ebf9add476f55f4977018d00071cac1a62f4399e35b8d28c7a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==15.2.0"
+        },
+        "marshmallow": {
+            "hashes": [
+                "sha256:e65accfbe277546df92ed7996a678c90e063e9a7c2a2f5e03f7d0b90e3768c42",
+                "sha256:fb6b8048af08d4ab061610d5b7d3696a7e4c95337dbda880edb9f95812cabc20"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==4.3.1"
         },
         "psycopg2-binary": {
             "hashes": [
@@ -133,6 +159,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==2.9.13"
+        },
+        "python-dotenv": {
+            "hashes": [
+                "sha256:904552145e8bfed22162c09dab1c2b9b54fefa7b23ba780f4f26ca0316b0f0d9",
+                "sha256:a20a594dabeaa385725aa239d5244871c143ecb356add8a20fcf23773a6c3a35"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==1.2.3"
         },
         "sqlparse": {
             "hashes": [
