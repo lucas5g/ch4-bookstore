@@ -1,4 +1,3 @@
-
 services:
   # web:
   #   build: .
@@ -19,8 +18,9 @@ services:
       - postgres_data_v15:/var/lib/postgresql/data/
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bookstore
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
       timeout: 5s
       retries: 5

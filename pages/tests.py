@@ -1,3 +1,4 @@
+from django.contrib.admin.utils import get_user_model
 from django.test import TestCase
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
