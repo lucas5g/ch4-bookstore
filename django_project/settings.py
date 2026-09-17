@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     #Local apps
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
 ]
 
 SITE_ID = 1
