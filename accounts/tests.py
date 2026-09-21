@@ -57,6 +57,35 @@ class SignUpPageTests(TestCase):
         self.assertEqual(get_user_model().objects.all()[0].email, self.email)
 
 
+class CustomUserAdminTests(TestCase):
+    def setUp(self):
+        self.admin_user = get_user_model().objects.create_superuser(
+            username='adminuser',
+            email='admin@example.com',
+            password='adminpassword123'
+        )
+
+    def test_admin_add_user_page(self):
+        self.client.force_login(self.admin_user)
+        response = self.client.get('/admin/accounts/customuser/add/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_admin_add_user_post(self):
+        self.client.force_login(self.admin_user)
+        response = self.client.post('/admin/accounts/customuser/add/', {
+            'username': 'createdviaadmin',
+            'email': 'createdviaadmin@example.com',
+            'password1': 'StrongPass123!@#',
+            'password2': 'StrongPass123!@#',
+            'usable_password': 'true',
+            '_save': 'Save',
+        })
+        self.assertEqual(response.status_code, 302)
+        user = get_user_model().objects.get(username='createdviaadmin')
+        self.assertEqual(user.email, 'createdviaadmin@example.com')
+
+
+
 # class SingUpPageTests(TestCase):
 
 #     username = 'newuser'
