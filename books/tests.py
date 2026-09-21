@@ -23,7 +23,7 @@ class BookTests(TestCase):
         cls.review = Review.objects.create(
             book=cls.book,
             author=cls.user,
-            text='An excelent review',
+            review='An excellent review',
         )
 
     def test_book_list(self):
